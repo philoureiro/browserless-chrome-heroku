@@ -1,10 +1,9 @@
 FROM ghcr.io/browserless/chromium:latest
 
-# 🔒 Desativa o painel DevTools UI no browserless
+# ❌ Desativa o DevTools UI por completo
 ENV DISABLE_DEVTOOLS=true
 
-# 🧠 Expõe a porta correta
+# 🌐 Porta padrão do browserless
 EXPOSE 3000
 
-# 🚀 Inicia o browserless normalmente
-CMD ["./scripts/start.sh"]
+# ✅ Usa o entrypoint padrão do container (nada a declarar aqui)
