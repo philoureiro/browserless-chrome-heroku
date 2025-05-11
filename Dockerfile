@@ -1,4 +1,10 @@
-FROM browserless/chrome
+FROM ghcr.io/browserless/chromium:latest
 
-# Sobrescreve o comando padrão para adicionar a flag
-CMD ["node", "build/index.js", "--disable-devtools"]
+# 🔒 Desativa o painel DevTools UI no browserless
+ENV DISABLE_DEVTOOLS=true
+
+# 🧠 Expõe a porta correta
+EXPOSE 3000
+
+# 🚀 Inicia o browserless normalmente
+CMD ["./scripts/start.sh"]
