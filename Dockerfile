@@ -1,5 +1,4 @@
-FROM ghcr.io/browserless/chromium:latest
+FROM browserless/chrome
 
-ENV DISABLE_DEVTOOLS=true
-
-CMD ["node", "build/index.js"]
+# Sobrescreve o comando padrão para adicionar a flag
+CMD ["node", "build/index.js", "--disable-devtools"]
